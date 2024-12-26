@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 // icons
 import {
   FaHtml5,
@@ -88,8 +89,26 @@ const aboutData = [
   },
 ];
 
+import Avatar from '../../components/Avatar';
+import Circles from "../../components/Circles";
+import Meteors from "@/components/ui/meteors.jsx";
+import TypingAnimation from "@/components/ui/typing-animation.jsx";
+// import BlurIn from "@/components/ui/blur-in.jsx";
+// import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
+
+
+
+
 const About = () => {
-  return <div>About</div>;
+  const [index,setIndex] = useState(0);
+  return <div className="h-full bg-primary/30 py-32 text-center">
+    <Circles/>
+    <Meteors/>
+    <TypingAnimation/>
+   <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
+      <div>text</div>
+   </div>
+  </div>;
 };
 
 export default About;
