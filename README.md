@@ -8,3 +8,9 @@
 - tailwindcss
 - framer-motion
 - ts-particles
+
+- for magic ui shadcn component
+- https://magicui.design/docs/components
+
+- next components for ui
+- https://ui.aceternity.com/component
