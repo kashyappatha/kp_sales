@@ -13,6 +13,7 @@ import {
   FaFileCode
 } from "react-icons/fa";
 
+
 import {
   SiNextdotjs,
   SiFramer,
@@ -20,6 +21,38 @@ import {
   SiAdobephotoshop,
 } from "react-icons/si";
 
+const slugs = [
+  "typescript",
+  "javascript",
+  "dart",
+  "java",
+  "react",
+  "flutter",
+  "android",
+  "html5",
+  "css3",
+  "nodedotjs",
+  "express",
+  "nextdotjs",
+  "prisma",
+  "amazonaws",
+  "postgresql",
+  "firebase",
+  "nginx",
+  "vercel",
+  "testinglibrary",
+  "jest",
+  "cypress",
+  "docker",
+  "git",
+  "jira",
+  "github",
+  "gitlab",
+  "visualstudiocode",
+  "androidstudio",
+  "sonarqube",
+  "figma",
+];
 
 //  data
 const aboutData = [
@@ -39,6 +72,7 @@ const aboutData = [
           // <FaFileCode/>
         ],
       },
+      
     ],
   },
   {
@@ -74,7 +108,7 @@ const aboutData = [
     ],
   },
   {
-    title: 'credentials',
+    title: 'Study',
     info: [
       {
         title: '10th - Dholakiya School',
@@ -130,6 +164,7 @@ import {fadeIn } from '../../variants';
 import CountUp from "react-countup";
 
 
+import IconCloud from "@/components/ui/icon-cloud";
 
 // import BlurIn from "@/components/ui/blur-in.jsx";
 // import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
@@ -229,7 +264,6 @@ const About = () => {
                       return <div className='text-3xl transition-all duration-300'>{icon}</div>;
                   })}
                 </div>
-                
             
               </div>         
             );

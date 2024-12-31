@@ -2,7 +2,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useTheme } from "next-themes";
 import { Cloud, fetchSimpleIcons, renderSimpleIcon } from "react-icon-cloud";
-import { color } from "framer-motion";
 
 export const cloudProps = {
   containerProps: {
@@ -11,7 +10,7 @@ export const cloudProps = {
       justifyContent: "center",
       alignItems: "center",
       width: "100%",
-      paddingTop: 40,
+      paddingTop: 150,
     },
   },
   options: {
@@ -25,9 +24,9 @@ export const cloudProps = {
     clickToFront: 500,
     tooltipDelay: 0,
     outlineColour: "#0000",
-    maxSpeed: 0.04,
+    maxSpeed: 0.03,
     minSpeed: 0.02,
-    dragControl: false,
+    dragControl: true,
   },
 };
 
@@ -36,9 +35,9 @@ export const renderCustomIcon = (
   theme,
   imageArray,
 ) => {
-  const bgHex = theme === "red" ? "#ff0000" : "#ff0000";
-  const fallbackHex = theme === "red" ? "#ff0000" : "#ff0000";
-  const minContrastRatio = theme === "red" ? 2 : 1.2;
+  const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
+  const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
+  const minContrastRatio = theme === "dark" ? 2 : 1.2;
 
   return renderSimpleIcon({
     icon,
@@ -87,8 +86,9 @@ export default function IconCloud({
           imageArray.length > 0 &&
           imageArray.map((image, index) => {
             return (
+              
               (<a key={index} href="#" onClick={(e) => e.preventDefault()}>
-                <img height="42" width="42" alt="A globe" src={image} />
+                <img height="30" width="30" alt="A globe" src={image} />
               </a>)
             );
           })}

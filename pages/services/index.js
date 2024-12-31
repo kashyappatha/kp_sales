@@ -52,13 +52,30 @@ const Services = () => {
         refresh
       />
       <Bulb/>
-        {/* <div className="relative flex size-full max-w-lg items-center justify-center overflow-hidden rounded-lg  px-20 pb-20 pt-8  ">
-      <IconCloud iconSlugs={slugs} />
-    </div> */}
-    <div className="container mx-auto">
-      
-    </div>
+       
+      <div className="container mx-auto flex xl:flex-row gap-8 items-center">
+  {/* Left side: Icon Cloud */}
+  <motion.div variants={fadeIn('down', 0.4)} initial='hidden' animate='show' exit='hidden'>
+
+  <div className="hidden xl:block mb-60">
+  <IconCloud iconSlugs={slugs}  />
+</div>
+</motion.div>
+
+
+  {/* Right side: Content */}
+  {/* <div className="flex-1 xl:mt-8  ">
+    <h2 className="h2">My Projects<span className="text-accent"></span></h2>
+    <p className="mb-4 max-w-[300px] mx-auto lg:mx-0">
+      Bussiness insurance - Where we used Technolody Laravel Orchid Package.Made Dynamic sections.
+    </p>
+    
+  </div> */}
+  <ServiceSlider/>
+</div>
+
   </div>;
+
 };
 
 export default Services;
