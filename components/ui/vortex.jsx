@@ -219,7 +219,7 @@ export const Vortex = (props) => {
         resize(canvas, ctx);
       }
     });
-  }, []);
+  }, [resize, setup]);
 
   return (
     (<div className={("relative h-full w-full", props.containerClassName)}>

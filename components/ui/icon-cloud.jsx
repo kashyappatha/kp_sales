@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useTheme } from "next-themes";
 import { Cloud, fetchSimpleIcons, renderSimpleIcon } from "react-icon-cloud";
+import Image from "next/image";
 
 export const cloudProps = {
   containerProps: {
@@ -88,7 +89,7 @@ export default function IconCloud({
             return (
               
               (<a key={index} href="#" onClick={(e) => e.preventDefault()}>
-                <img height="30" width="30" alt="A globe" src={image} />
+                <Image height="30" width="30" alt="A globe" src={image} />
               </a>)
             );
           })}

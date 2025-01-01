@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";;
 // import { cn } from "@/lib/utils";
 import React, { useEffect, useRef, useState } from "react";
@@ -75,10 +76,12 @@ const Particles = ({
       }
       window.removeEventListener("resize", initCanvas);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [color]);
 
   useEffect(() => {
     onMouseMove();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mousePosition.x, mousePosition.y]);
 
   useEffect(() => {

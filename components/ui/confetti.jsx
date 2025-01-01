@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-undef */
 import React, {
   createContext,
   forwardRef,
@@ -9,7 +10,7 @@ import React, {
 } from "react";
 import confetti from "canvas-confetti";
 
-// import { Button } from "@/components/ui/button";
+// import  Button  from "@/components/ui/button";
 
 const ConfettiContext = createContext({});
 
