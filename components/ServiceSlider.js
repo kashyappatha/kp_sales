@@ -17,6 +17,7 @@ import {
   FaWordpress,
   FaLaravel,
   FaShopify,
+  FaPhp,
  
 } from "react-icons/fa";
 
@@ -24,6 +25,8 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 
 import { FreeMode, Pagination } from "swiper";
+import Link from "next/link";
+
 
 
 // data
@@ -33,12 +36,14 @@ const serviceData = [
     title: 'Bussiness insurence',
     technplpgy: 'Laravel Orchid',
     description: 'Here I Made Dynamic Section using Laravel Orchid.',
+    Link: 'http://laravel.gwcabinet.com/',
   },
   {
     icon: <FaLaravel color="red"/>,
     title: 'Listit',
     technplpgy: 'Laravel , Mysql',
     description: 'Here We made some changes using laravel, javascript.',
+    Link:'https://github.com/kashyap-credsoft/'
   },
   {
     icon: <FaShopify color="green"/>,
@@ -92,7 +97,7 @@ const ServiceSlider = () => {
             <p>{item.description}</p>
           </div>&nbsp;
           <div className="text-3xl">
-            <RxArrowTopRight className="group-hover:rotate-45 group-hover:text-accent"/>
+            <RxArrowTopRight className="group-hover:rotate-45 group-hover:text-accent" onClick={() => window.open(item.Link)}/>
           </div>
         </div>
         </motion.div>
@@ -107,5 +112,6 @@ const ServiceSlider = () => {
   </Swiper>;
   
 };
+
 
 export default ServiceSlider;

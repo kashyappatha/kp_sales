@@ -10,7 +10,7 @@ export const cloudProps = {
       justifyContent: "center",
       alignItems: "center",
       width: "100%",
-      paddingTop: 150,
+      paddingTop: 200,
     },
   },
   options: {
