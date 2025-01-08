@@ -15,9 +15,9 @@ const Home = () => {
     <div className='w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10'>
       <div className='text-center flex flex-col justify-center xl:pt-40 md:text-left h-full container mx-auto'>
 
-          <motion.h1 variants={fadeIn('down', 0.4)} initial='hidden' animate='show' exit='hidden' className='h1 justify-center xl:justify-start'><LetterPullup words={"Kashyap pathak"} delay={0.3}/>
+          <motion.h1 variants={fadeIn('down', 0.4)} initial='hidden' animate='show' exit='hidden' className='h1 '><LetterPullup words={"Kashyap pathak"} delay={0.3}/>
 
-            <motion.span variants={fadeIn('down', 0.4)} initial='hidden' animate='show' exit='hidden' className='text-amber-600 text-3xl'>Passionate about Laravel <br/> open Tech-driven opportunities</motion.span></motion.h1>
+            <motion.span variants={fadeIn('down', 0.4)} initial='hidden' animate='show' exit='hidden' className='text-amber-600 text-3xl'>Passionate About Laravel <br/> Open For Opportunity</motion.span></motion.h1>
           {/* paragraph */}
         {/* <p className='max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16'>The right technology, used with the right mindset, can transform ideas into impactful solutions</p> */}
         <div className='flex justify-center xl:hidden relative'>

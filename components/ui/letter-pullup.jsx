@@ -22,7 +22,7 @@ export default function LetterPullup({
   };
 
   return (
-    (<div className="flex   xl:justify-left">
+    (<div className="flex justify-center xl:justify-start mt-6">
       {letters.map((letter, i) => (
         <motion.h1
           key={i}
@@ -31,7 +31,7 @@ export default function LetterPullup({
           animate="animate"
           custom={i}
           className={(
-            "font-display text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-4xl md:leading-[5rem]",
+            "font-display text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-4xl md:leading-[5rem] ",
             className
           )}>
           {letter === " " ? <span>&nbsp;</span> : letter}

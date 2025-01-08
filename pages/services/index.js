@@ -58,7 +58,7 @@ const Services = () => {
   <motion.div variants={fadeIn('down', 0.4)} initial='hidden' animate='show' exit='hidden'>
 
   <div className="hidden xl:block mb-60">
-  <IconCloud iconSlugs={slugs}  />
+  {/* <IconCloud iconSlugs={slugs}  /> */}
 </div>
 </motion.div>
 
