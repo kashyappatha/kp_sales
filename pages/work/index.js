@@ -93,16 +93,8 @@ const About = () => {
         onMouseEnter={() => {
           Confetti.current?.fire({});
         }}/>
-         {/* <Vortex
-        backgroundColor
-        rangeY={100}
-        particleCount={100}
-        baseHue={10}
-        className="flex items-center flex-col justify-center px-2 md:px-10  py-4 w-[200px] h-full"
-      ></Vortex> */}
-      {/* <BackgroundBeamsWithCollision/  > */}
     <TypingAnimation/>
-   <div className="container max-h-[400px] xl:max-h-[600px] mx-auto h-auto flex flex-col items-center xl:flex-row gap-x-6 xl:overflow-y-hidden overflow-y-scroll ">
+   <div className="container max-h-[600px] xl:max-h-[600px] mx-auto h-auto flex flex-col items-center xl:flex-row gap-x-6 xl:overflow-y-hidden overflow-y-scroll">
       <div className="flex-1 flex flex-col justify-center">
       <motion.span variants={fadeIn('down', 0.4)} initial='hidden' animate='show' exit='hidden' className='h1 z-10'> <h1 className="text-2xl font-bold mb-0 ">Let&apos;s Know More </h1></motion.span>
       <GradualSpacing
@@ -113,7 +105,7 @@ const About = () => {
   </motion.span>&nbsp;
       <motion.div variants={fadeIn('left', 0.4)} initial='hidden' animate='show' exit='hidden'> 
         
-      <div className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8">
+      <div className="md:flex md:max-h-xl xl:max-w-none mx-auto xl:mx-0 mb-8">
         <div className="flex flex-1 xl:gap-x-6 xl:justify-center ">
           <div className='relative flex-1 after:w-[0px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0 justify-center'>
             <div className='text-2xl xl:text-4xl font-bold text-accent'>
@@ -140,7 +132,7 @@ const About = () => {
         </div>
         
       </div>
-      <div className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8">
+      <div className="md:flex  mx-auto xl:mx-0 mb-8">
       <div className='relative flex-1 after:w-[0px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
             <div className='text-2xl xl:text-4xl font-bold text-accent'>
             1st to 10th
@@ -173,7 +165,7 @@ const About = () => {
         
       </div>
       </motion.div>
-      </div><BackgroundBeamsWithCollision/  >
+      </div>
       <div className="flex flex-col w-full xl:max-w-[48%] h-[480px] text-white">
       <h2 className="text-4xl text-accent">Work Experience</h2><br/>
         <div className="grid grid-cols-2 gap-4 mx-auto xl:mx-0 mb-4">
