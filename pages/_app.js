@@ -6,6 +6,8 @@ import Transition from '../components/Transition';
 import {AnimatePresence, motion} from 'framer-motion';
 import { useRouter } from 'next/router';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from "@vercel/analytics/react"
+
 
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -17,6 +19,7 @@ export default function MyApp({ Component, pageProps }) {
           </motion.div>
         </AnimatePresence>
         <SpeedInsights />
+        <Analytics/>
     </Layout>;
 }
 
