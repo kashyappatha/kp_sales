@@ -97,7 +97,7 @@ const awardData = [
               {/* <div onClick={() => window.open(item.image, '_blank')}> */}
                 <div className="cursor-pointer" onClick={() => {
                   const popup = window.open("", "ImagePopup", "width=600,height=400");
-                  popup.document.write(`<html><head><title>Image</title></head><body style="margin:0;display:flex;justify-content:center;align-items:center;height:100vh;background-color:black;"><img src="${item.image}" style="max-width:100%;max-height:100%;"/></body></html>`);
+                  popup.document.write(`<html><head><title>Image</title></head><body style="margin:0;display:flex;justify-content:center;align-items:center;height:100vh;background-color:black;"><img src="${item.image}" style="max-width:100%;max-height:100%;"/></body></html>`)
                   popup.document.close();
                 }}>
                   <RxArrowTopRight />

@@ -110,7 +110,7 @@ const ServiceSlider = () => {
   }       
 
 <h2 className="flex text-2xl justify-center md:justify-start">Compney Project Where i Work.</h2>
-  </Swiper>;
+  </Swiper>
   </>
   
 };
