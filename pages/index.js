@@ -17,7 +17,7 @@ const Home = () => {
 
           <motion.h1 variants={fadeIn('down', 0.4)} initial='hidden' animate='show' exit='hidden' className='h1 '><LetterPullup words={"Kashyap pathak"} delay={0.3}/>
 
-            <motion.span variants={fadeIn('down', 0.4)} initial='hidden' animate='show' exit='hidden' className='text-amber-600 text-3xl'>Passionate About Laravel <br/> Open For Opportunity</motion.span></motion.h1>
+            <motion.span variants={fadeIn('down', 0.4)} initial='hidden' animate='show' exit='hidden' className='text-amber-600 text-3xl'>Open For Any Opportunity <br/>  Passionate About Laravel</motion.span></motion.h1>
           {/* paragraph */}
         {/* <p className='max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16'>The right technology, used with the right mindset, can transform ideas into impactful solutions</p> */}
         <div className='flex justify-center xl:hidden relative'>
