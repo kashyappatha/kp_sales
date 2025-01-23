@@ -24,6 +24,12 @@ export default function Contact() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
+    if (response.ok) {
+      alert("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      alert("Error sending message.");
+    }
     // if (response.ok) {
     //   toast.success("Message sent successfully!"); // Show success toast
     //   setFormData({ name: "", email: "", message: "" });
