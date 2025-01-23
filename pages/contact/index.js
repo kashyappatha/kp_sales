@@ -39,12 +39,12 @@ export default function Contact() {
   };
 
   return (
-    <motion.div variants={fadeIn('down', 0.4)} initial='hidden' animate='show' exit='hidden' className="relative flex items-center justify-center min-h-screen bg-gradient-to-b from-primary-700 to-gray-900">
+    <motion.div variants={fadeIn('down', 0.4)} initial='hidden' animate='show' exit='hidden' className="relative flex items-center justify-center min-h-screen bg-gradient-to-b from-primary-700 to-gray-900 mt-7 md:mb-2 px-8 sm:px-0">
       <Meteors className="absolute z-10"/> {/* Added z-index to Meteors */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl z-20">
         <form
           onSubmit={handleSubmit}
-          className="bg-primary bg-opacity-20 backdrop-blur-lg p-8 rounded-lg shadow-lg border border-gray-300" // Updated form styles
+          className="bg-primary bg-opacity-20 backdrop-blur-lg p-4 rounded-lg shadow-lg border border-gray-300 max-h-[400px] md:max-h-[500px] overflow-y-auto" // Added responsive max height and overflow-y
         > 
           <h2 className="text-2xl font-bold text-center text-white mb-6">
             Contact Us
@@ -97,7 +97,7 @@ export default function Contact() {
               onChange={handleChange}
               required
               className="w-full px-4 py-2 border border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-white"
-              rows="5"
+              rows="2"
             />
           </div>
           <button
@@ -107,7 +107,7 @@ export default function Contact() {
             Send Message
           </button>
         </form>
-        <div className="bg-primary bg-opacity-20 p-8 rounded-lg shadow-lg border border-gray-300 flex flex-col justify-center items-center">
+        <div className="bg-primary bg-opacity-20 p-8 rounded-lg shadow-lg border border-gray-300 flex flex-col justify-center items-center hidden sm:flex">
           <h2 className="text-2xl font-bold text-center text-white mb-4">Contact Details</h2>
           <p className="text-white tracking-wide sans-serif">Feel free to reach out to us via the form or at:</p>
           <p className="text-white tracking-wide sans-serif">Email: pathakkashyap80@gmail.com</p>
