@@ -204,9 +204,9 @@ const About = () => {
             </details>
           </div>
         </div>
-        <h2 className="text-3xl text-accent text-left">Documents</h2><br/>
-        <div className="flex flex-row space-x-6 text-left justify-left">
-          <a href="../../10th.jpg" className="flex items-center">
+        <h2 className="text-3xl text-accent text-center md:text-left">Documents</h2><br/>
+        <div className="flex flex-row space-x-6 text-left justify-center md:justify-center xl:justify-start">
+          <a href="../../10th.jpg" className="flex items-center ">
             <FaCloudDownloadAlt className="mr-2" />10th
           </a>
           <a href="../../12th+gujcet.jpg" className="flex items-center">
