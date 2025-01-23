@@ -1,6 +1,6 @@
 import { useState } from "react";
-// import { ToastContainer, toast } from 'react-toastify'; // Import ToastContainer and toast
-// import 'react-toastify/dist/ReactToastify.css'; // Import CSS for toast notifications
+import { ToastContainer, toast } from 'react-toastify'; // Import ToastContainer and toast
+import 'react-toastify/dist/ReactToastify.css'; // Import CSS for toast notifications
 import Meteors from "@/components/ui/meteors.jsx";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
@@ -24,12 +24,12 @@ export default function Contact() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
-    // if (response.ok) {
-    //   toast.success("Message sent successfully!"); // Show success toast
-    //   setFormData({ name: "", email: "", message: "" });
-    // } else {
-    //   toast.error("Error sending message."); // Show error toast
-    // }
+    if (response.ok) {
+      toast.success("Message sent successfully!"); // Show success toast
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      toast.error("Error sending message."); // Show error toast
+    }
   };
 
   return (
