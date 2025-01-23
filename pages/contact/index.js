@@ -114,7 +114,7 @@ export default function Contact() {
           <p className="text-white tracking-wide sans-serif">Phone: +917990653556</p>
         </div>
       </div>
-      <ToastContainer /> {/* Add ToastContainer to render toasts */}
+      {/* <ToastContainer /> Add ToastContainer to render toasts */}
     </motion.div>
   );
 }
