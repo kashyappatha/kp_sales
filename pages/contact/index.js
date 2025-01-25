@@ -1,16 +1,17 @@
 import { useState } from "react";
-// import { ToastContainer, toast } from 'react-toastify'; // Import ToastContainer and toast
-// import 'react-toastify/dist/ReactToastify.css'; // Import CSS for toast notifications
 import Meteors from "@/components/ui/meteors.jsx";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
+import { toast } from "sonner";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    email: "", 
     message: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,32 +20,41 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-    if (response.ok) {
-      alert("Message sent successfully!");
+    setLoading(true);
+    setError(null);
+    
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      toast.success("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
-    } else {
-      alert("Error sending message.");
+      
+    } catch (err) {
+      setError(err.message);
+      toast.error("Error sending message: " + err.message);
+    } finally {
+      setLoading(false);
     }
-    // if (response.ok) {
-    //   toast.success("Message sent successfully!"); // Show success toast
-    //   setFormData({ name: "", email: "", message: "" });
-    // } else {
-    //   toast.error("Error sending message."); // Show error toast
-    // }
   };
 
   return (
     <motion.div variants={fadeIn('down', 0.4)} initial='hidden' animate='show' exit='hidden' className="relative flex items-center justify-center min-h-screen bg-gradient-to-b from-primary-700 to-gray-900 mt-7 md:mb-2 px-8 sm:px-0">
-      <Meteors className="absolute z-10"/> {/* Added z-index to Meteors */}
+      <Meteors className="absolute z-10"/>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl z-20">
         <form
           onSubmit={handleSubmit}
-          className="bg-primary bg-opacity-20 backdrop-blur-lg p-4 rounded-lg shadow-lg border border-gray-300 max-h-[400px] md:max-h-[500px] overflow-y-auto" // Added responsive max height and overflow-y
+          className="bg-primary bg-opacity-20 backdrop-blur-lg p-4 rounded-lg shadow-lg border border-gray-300 max-h-[400px] md:max-h-[500px] overflow-y-auto"
         > 
           <h2 className="text-2xl font-bold text-center text-white mb-6">
             Contact Us
@@ -64,6 +74,7 @@ export default function Contact() {
               onChange={handleChange}
               required
               className="w-full px-4 py-2 border border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-white"
+              disabled={loading}
             />
           </div>
           <div className="mb-4">
@@ -81,6 +92,7 @@ export default function Contact() {
               onChange={handleChange}
               required
               className="w-full px-4 py-2 border border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-white"
+              disabled={loading}
             />
           </div>
           <div className="mb-4">
@@ -98,13 +110,15 @@ export default function Contact() {
               required
               className="w-full px-4 py-2 border border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-white"
               rows="2"
+              disabled={loading}
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50"
+            disabled={loading}
           >
-            Send Message
+            {loading ? 'Sending...' : 'Send Message'}
           </button>
         </form>
         <div className="bg-primary bg-opacity-20 p-8 rounded-lg shadow-lg border border-gray-300 flex flex-col justify-center items-center hidden sm:flex">
@@ -114,7 +128,6 @@ export default function Contact() {
           <p className="text-white tracking-wide sans-serif">Phone: +917990653556</p>
         </div>
       </div>
-      {/* <ToastContainer /> Add ToastContainer to render toasts */}
     </motion.div>
   );
 }

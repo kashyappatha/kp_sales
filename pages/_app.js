@@ -6,7 +6,8 @@ import Transition from '../components/Transition';
 import {AnimatePresence, motion} from 'framer-motion';
 import { useRouter } from 'next/router';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import { Toaster } from "@/components/ui/sonner"
 
 
 export default function MyApp({ Component, pageProps }) {
@@ -18,6 +19,7 @@ export default function MyApp({ Component, pageProps }) {
             <Component {...pageProps} />
           </motion.div>
         </AnimatePresence>
+        <Toaster />
         <SpeedInsights />
         <Analytics/>
     </Layout>;
