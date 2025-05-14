@@ -3,6 +3,13 @@ import Meteors from "@/components/ui/meteors.jsx";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import { toast } from "sonner";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid email address"),
+  message: z.string().min(5, "Message must be at least 10 characters"),
+});
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,25 +18,30 @@ export default function Contact() {
     message: "",
   });
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing
+    setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError(null);
+    setErrors({});
     
     try {
+      // Validate form data
+      const validatedData = contactSchema.parse(formData);
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(validatedData),
       });
 
       if (!response.ok) {
@@ -41,8 +53,17 @@ export default function Contact() {
       setFormData({ name: "", email: "", message: "" });
       
     } catch (err) {
-      setError(err.message);
-      toast.error("Error sending message: " + err.message);
+      if (err instanceof z.ZodError) {
+        // Handle validation errors
+        const fieldErrors = {};
+        err.errors.forEach(error => {
+          fieldErrors[error.path[0]] = error.message;
+        });
+        setErrors(fieldErrors);
+      } else {
+        // Handle other errors
+        toast.error("Error sending message: " + err.message);
+      }
     } finally {
       setLoading(false);
     }
@@ -54,7 +75,7 @@ export default function Contact() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl z-20">
         <form
           onSubmit={handleSubmit}
-          className="bg-primary bg-opacity-20 backdrop-blur-lg p-4 rounded-lg shadow-lg border border-gray-300 max-h-[400px] md:max-h-[500px] overflow-y-auto"
+          className="bg-primary bg-opacity-20 backdrop-blur-lg p-4 rounded-lg shadow-lg border border-gray-300 max-h-[400px] md:max-h-[600px] overflow-y-auto"
         > 
           <h2 className="text-2xl font-bold text-center text-white mb-6">
             Contact Us
@@ -72,10 +93,12 @@ export default function Contact() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              required
-              className="w-full px-4 py-2 border border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-white"
+              className={`w-full px-4 py-2 border ${errors.name ? 'border-red-500' : 'border-gray-400'} rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-white`}
               disabled={loading}
             />
+            {errors.name && (
+              <p className="mt-1 text-red-500 text-sm">{errors.name}</p>
+            )}
           </div>
           <div className="mb-4">
             <label
@@ -90,10 +113,12 @@ export default function Contact() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              required
-              className="w-full px-4 py-2 border border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-white"
+              className={`w-full px-4 py-2 border ${errors.email ? 'border-red-500' : 'border-gray-400'} rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-white`}
               disabled={loading}
             />
+            {errors.email && (
+              <p className="mt-1 text-red-500 text-sm">{errors.email}</p>
+            )}
           </div>
           <div className="mb-4">
             <label
@@ -107,18 +132,26 @@ export default function Contact() {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              required
-              className="w-full px-4 py-2 border border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-white"
+              className={`w-full px-4 py-2 border ${errors.message ? 'border-red-500' : 'border-gray-400'} rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-white`}
               rows="2"
               disabled={loading}
             />
+            {errors.message && (
+              <p className="mt-1 text-red-500 text-sm">{errors.message}</p>
+            )}
           </div>
           <button
             type="submit"
             className="w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50"
             disabled={loading}
           >
-            {loading ? 'Sending...' : 'Send Message'}
+            {loading ? (
+              <div className="flex items-center justify-center">
+                <div className="w-5 h-5 border-2 border-white rounded-full animate-spin border-t-transparent"></div>
+              </div>
+            ) : (
+              'Send Message'
+            )}
           </button>
         </form>
         <div className="bg-primary bg-opacity-20 p-8 rounded-lg shadow-lg border border-gray-300 flex flex-col justify-center items-center hidden sm:flex">

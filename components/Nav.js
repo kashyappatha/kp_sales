@@ -5,23 +5,45 @@ import {
   HiRectangleGroup,
   HiChatBubbleBottomCenterText,
   HiEnvelope,
+  HiInformationCircle,
+  HiFolder,
+  HiCheckBadge,
+  HiOutlineDocumentDuplicate,
+  HiShieldExclamation,
+  HiOutlineInformationCircle,
+  HiDocumentDuplicate
 } from 'react-icons/hi2';
+import {
+  FaHtml5,
+  FaWordpress,
+  FaLaravel,
+  FaShopify,
+  FaPhp,
+  FaChair,
+  FaFilePdf,
+  FaAward,
+  FaCertificate,
+  FaUserTie,
+
+} from "react-icons/fa";
 
 // nav data
 export const navData = [
   { name: 'home', path: '/', icon: <HiHome /> },
-  { name: 'about', path: '/about', icon: <HiUser /> },
-  { name: 'Projects', path: '/services', icon: <HiRectangleGroup /> },
-  { name: 'Experience', path: '/work', icon: <HiViewColumns /> },
+  { name: 'about', path: '/about', icon: < HiInformationCircle /> },
+  { name: 'Education', path: '/education', icon: < HiDocumentDuplicate /> },
+  { name: 'Experience', path: '/work', icon: <FaUserTie /> },
+  { name: 'Projects', path: '/projects', icon: <HiFolder  /> },
+
   {
-    name: 'testimonials',
-    path: '/testimonials',
-    icon: <HiChatBubbleBottomCenterText />,
+    name: 'awards',
+    path: '/awards',
+    icon: <FaAward />,
   },
   {
     name: 'contact',
     path: '/contact',
-    icon: <HiEnvelope />,
+    icon: <HiUser />,
   },
 ];
 

@@ -46,16 +46,31 @@ const serviceData = [
     Link:'https://github.com/kashyap-credsoft/'
   },
   {
+    icon: <FaWordpress color="blue" text='white' />,
+    title: 'Phonestation',
+    technplpgy: 'Elementor',
+    description: 'we made some changes like fonts,sections in wordpress. using Genesis Theme',
+    Link: 'https://www.phonestationplus.com/'
+  },
+  {
+    icon: <FaWordpress color="blue" />,
+    title: 'CSAT African ',
+    technplpgy: 'Wordpress',
+    description: 'Here I made all pages and sections using Kentwood theme',
+    Link: 'csatafrique.org'
+  },
+  {
+    icon: <FaWordpress color="blue" />,
+    title: 'OruWest',
+    technplpgy: 'Wordpress',
+    description: 'Here i made page of wordpress',
+    Link: 'https://www.oruwestlga.ng/'
+  },
+  {
     icon: <FaShopify color="green"/>,
     title: 'AVL',
     technplpgy: 'Shopify',
     description: 'Made sections various changes in shopify site',
-  },
-  {
-    icon: <FaWordpress color="blue" text='white' />,
-    title: 'Phonestation',
-    technplpgy: 'Elementor',
-    description: 'we made some changes like fonts,sections in wordpress.',
   },
   {
     icon: <FaHtml5 color="orange" />,
@@ -63,6 +78,7 @@ const serviceData = [
     technplpgy: 'Shopify',
     description: 'whiskys mail template and add to shopify',
   },
+  
 ];
 const ServiceSlider = () => {
   return     <>
@@ -109,7 +125,7 @@ const ServiceSlider = () => {
    
   }       
 
-<h2 className="flex text-2xl justify-center md:justify-start">Compney Project Where i Work.</h2>
+<h2 className="flex text-2xl justify-center md:justify-start p-4">Compney Project Where i Work.</h2>
   </Swiper>
   </>
   

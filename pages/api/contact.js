@@ -7,9 +7,6 @@ export default async function handler(req, res) {
     const { name, email, message } = req.body;
 
     // Validate input
-    if (!name || !email || !message) {
-      return res.status(400).json({ error: 'All fields are required.' });
-    }
 
     try {
       // Save the contact message to the database
