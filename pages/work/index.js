@@ -58,23 +58,25 @@ const About = () => {
         </motion.div>
 
         <motion.div variants={fadeIn('right')} initial="hidden" animate="show">
-          <div className="p-11 bg-gray-700 rounded-xl shadow-lg">
-            <h2 className="text-2xl font-semibold text-accent">My Bussiness Card</h2><br/>
+          <div className="p-10 bg-gray-700 rounded-xl shadow-lg">
+            <h2 className="text-2xl font-semibold text-accent">My Bussiness Criteria</h2><br/>
             <div className="flex space-x-4 justify-center">
-              <a
-                href="./kashyappathak.pdf"
-                download
-                className="flex items-center px-4 py-2 bg-gray-600 text-white rounded hover:bg-blue-700 justify-center"
-              >
-                <FaDownload className="mr-2" />
-              </a>
-              <a
-                href="./ksp.pdf"
-                download
-                className="flex items-center px-4 py-2 bg-gray-600 text-white rounded hover:bg-green-700 justi"
-              >
-                <FaDownload className="mr-2" />
-              </a>
+            <a
+  href="#"
+  onClick={(e) => {
+    e.preventDefault();
+    window.open('./ksp.pdf', '_blank', 'noopener,noreferrer');
+    const link = document.createElement('a');
+    link.href = './ksp.pdf';
+    link.download = 'ksp.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }}
+  className="flex items-center px-4 py-2 bg-gray-600 text-white rounded hover:bg-blue-700 justify-center"
+>
+  My Bussiness Card
+</a>
             </div>
           </div>
         </motion.div>
