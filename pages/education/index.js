@@ -20,7 +20,7 @@ const About = () => {
         Education
       </motion.h1>
 
-      <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+      <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-4">
         <motion.div variants={fadeIn('left')} initial="hidden" animate="show">
           <div className="p-6 bg-gray-700 rounded-xl shadow-lg">
             <h2 className="text-2xl font-semibold text-accent">10th</h2>
