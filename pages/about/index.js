@@ -11,7 +11,9 @@ import {
   FaLaravel,
   FaShopify,
   FaDatabase,
-  FaFileCode
+  FaFileCode,
+  FaIndustry,
+  FaHandshake,
 } from "react-icons/fa";
 
 
@@ -61,51 +63,49 @@ const aboutData = [
     title: 'skills',
     info: [
       {
-        title: 'Web Development',
+        title: 'Basic CNC & VMC understanding',
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaLaravel/>,
-          <FaShopify/>,
-          <FaWordpress />,
-          <FaDatabase/>,
-          // <FaFileCode/>
+         <FaIndustry/>
+
+        ],
+      },
+      {
+        title: 'Basic Knowledge Of Sales, Marketing , Quotation , Payment',
+        icons: [
+         <FaHandshake/>
+
         ],
       },
       
     ],
   },
-  {
-    title: 'awards',
-    info: [
-      {
-        title: 'Patent Design for Gesture chair',
-        stage: '2022',
-        // image:'https://media.licdn.com/dms/image/v2/D4D22AQGSpzCjXSs-hg/feedshare-shrink_1280/feedshare-shrink_1280/0/1714032934302?e=1738195200&v=beta&t=IYwQ_Bm4D8DD6xlv95blNZ4qtBUYXzyta1964WJ_geU'
-      },
-      {
-        title: 'Copyright Registered For website',
-        stage: '2023',
-        // image:'https://media.licdn.com/dms/image/v2/D562DAQHKAFgvcWCTHw/profile-treasury-image-shrink_1280_1280/profile-treasury-image-shrink_1280_1280/0/1706847809223?e=1735826400&v=beta&t=tUmrn4TCuTYeNtGuFGzomekTfjPIfeMXgn3aQ0xZkMk'
-      },
-      {
-        title: 'Awarded B.Tech Degree Certificate',
-        stage: '2024',
-      },
-    ],
-  },
+  // {
+  //   title: 'awards',
+  //   info: [
+  //     {
+  //       title: 'Patent Design for Gesture chair',
+  //       stage: '2022',
+  //       // image:'https://media.licdn.com/dms/image/v2/D4D22AQGSpzCjXSs-hg/feedshare-shrink_1280/feedshare-shrink_1280/0/1714032934302?e=1738195200&v=beta&t=IYwQ_Bm4D8DD6xlv95blNZ4qtBUYXzyta1964WJ_geU'
+  //     },
+  //     {
+  //       title: 'Copyright Registered For website',
+  //       stage: '2023',
+  //       // image:'https://media.licdn.com/dms/image/v2/D562DAQHKAFgvcWCTHw/profile-treasury-image-shrink_1280_1280/profile-treasury-image-shrink_1280_1280/0/1706847809223?e=1735826400&v=beta&t=tUmrn4TCuTYeNtGuFGzomekTfjPIfeMXgn3aQ0xZkMk'
+  //     },
+  //     {
+  //       title: 'Awarded B.Tech Degree Certificate',
+  //       stage: '2024',
+  //     },
+  //   ],
+  // },
   {
     title: 'experience',
     info: [
       {
-        title: 'Intern - Dcoded Innovation',
-        stage: 'Jan - May(2024)',
+        title: 'Sales & Service Assitant',
+        stage: 'Feb- 2025',
       },
-      {
-        title: 'Apprentice - Credsoft Technology',
-        stage: 'Present',
-      },
+      
     ],
   },
   {
@@ -131,10 +131,7 @@ const aboutData = [
   {
     title: 'Hobby',
     info: [
-      {
-        title: 'Typing',
-        image:'https://img.icons8.com/ios/50/key-press.png'
-      },
+     
       {
         title: 'Exploring',
         image:'https://img.icons8.com/ios/50/search--v1.png'
@@ -143,14 +140,7 @@ const aboutData = [
         title: 'Traveling',
         image:'https://img.icons8.com/ios/50/around-the-globe.png'
       },
-      {
-        title: 'Coding',
-        image:'https://img.icons8.com/ios/50/laptop-coding.png'
-      },
-      {
-        title: 'Enjoying Water',
-        image:'https://img.icons8.com/pastel-glyph/64/bath--v2.png'
-      },
+    
     ],
   },
 ];
@@ -180,9 +170,9 @@ const About = () => {
     <Circles/>
     <Meteors/>
     <TypingAnimation/>
-   <div className="container max-h-[400px] xl:max-h-[600px] mx-auto h-auto flex flex-col items-center xl:flex-row gap-x-6 xl:overflow-y-hidden overflow-y-scroll ">
+   <div className="container max-h-[400px] xl:max-h-[600px] mx-auto h-auto flex flex-col items-center xl:flex-row gap-x-6 xl:overflow-y-hidden">
       <div className="flex-1 flex flex-col justify-center p-3 xl:p-0">
-      <motion.span variants={fadeIn('down', 0.4)} initial='hidden' animate='show' exit='hidden' className='h1 z-10'> <h1 className="text-2xl font-bold mb-0 ">Let&apos;s See </h1></motion.span>
+      <motion.span variants={fadeIn('down', 0.4)} initial='hidden' animate='show' exit='hidden' className='h1 z-10'> <h1 className="hidden md:flex text-2xl font-bold mb-0 ">Let&apos;s See </h1></motion.span>
       <GradualSpacing
       className="font-display text-justify text-4xl font-bold -tracking-widest  text-white dark:text-white md:text-4xl md:leading-[5rem]"
       text="About Me"
@@ -194,10 +184,10 @@ const About = () => {
   </p>
  
   <p className="text-lg mb-2 text-justify max-w-[500px] mx-auto xl:mx-0 text-white">
-   I have Knowledge of Computer So Open For Related Works.
+   I have Knowledge of Sales And Marketing , Basic Machine related Knowledge.
   </p>
   <p className="text-lg mb-2 text-justify max-w-[500px] mx-auto xl:mx-0 text-white">
-    Currently, I am working at Credsoft Technologies since July - 2024.
+    Currently, I am working at <span className="text-bold text-accent">Ace Micromatic PVT LTD</span>  as Sales Assitent.
   </p>
   </motion.span>&nbsp;
       <motion.div variants={fadeIn('left', 0.4)} initial='hidden' animate='show' exit='hidden'> 
@@ -205,26 +195,19 @@ const About = () => {
         <div className="flex flex-1 xl:gap-x-6 xl:justify-center ">
           <div className='relative flex-1 after:w-[0px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0 justify-center'>
             <div className='text-2xl xl:text-4xl font-bold text-accent'>
-              <CountUp start={0} end={6} duration={5}/>+
+              <CountUp start={0} end={4} duration={4}/>+
             </div>
             <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[10]">
               Month of experience
             </div>
           </div>
-          <div className='relative flex-1 after:w-[0px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
-            <div className='text-2xl xl:text-4xl font-bold text-accent'>
-              <CountUp start={0} end={3} duration={5}/>+
-            </div>
-            <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[10]">
-              Projects I Worked.
-            </div>
-          </div>
+         
           
         </div>
       </div>
       </motion.div>
       </div>
-      <div className="flex flex-col w-full xl:max-w-[48%] h-[480px] text-white">
+      <div className="hidden md:flex flex-col w-full xl:max-w-[48%] h-[480px] text-white">
         <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
           {aboutData.map((item, itemIndex) => {
             return(
