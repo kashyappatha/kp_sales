@@ -11,7 +11,7 @@ const fadeIn = (direction = "up", delay = 0.4) => ({
 
 const About = () => {
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-center overflow-y-auto">
+    <div className="h-full bg-primary/30 py-32 text-center xl:text-center">
       <motion.h1 
         variants={fadeIn()}
         initial="hidden"
@@ -47,7 +47,7 @@ const About = () => {
           </div>
           
         </motion.div>
-        <motion.div variants={fadeIn('right')} initial="hidden" animate="show" className="bg-gray-700 rounded-xl p-5">
+        <motion.div variants={fadeIn('right')} initial="hidden" animate="show" className="hidden md:block bg-gray-700 rounded-xl p-5">
         <h2 className="text-2xl text-accent mb-4">Documents</h2>
         <div className="flex gap-x-6 justify-center ">
           <a href="../../10th.jpg" className="flex items-center text-gray-200 hover:text-accent transition-all">
