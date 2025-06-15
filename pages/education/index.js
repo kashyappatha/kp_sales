@@ -16,7 +16,7 @@ const About = () => {
         variants={fadeIn()}
         initial="hidden"
         animate="show"
-        className="text-4xl font-extrabold text-center text-accent mb-8"
+        className="hidden md:block text-4xl font-extrabold text-center text-accent mb-8"
       >
         Education
       </motion.h1>
