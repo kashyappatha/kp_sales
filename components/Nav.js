@@ -33,13 +33,13 @@ export const navData = [
   { name: 'about', path: '/about', icon: < HiInformationCircle /> },
   { name: 'Education', path: '/education', icon: < HiDocumentDuplicate /> },
   { name: 'Experience', path: '/work', icon: <FaUserTie /> },
-  { name: 'Projects', path: '/projects', icon: <HiFolder  /> },
+  // { name: 'Projects', path: '/projects', icon: <HiFolder  /> },
 
-  {
-    name: 'awards',
-    path: '/awards',
-    icon: <FaAward />,
-  },
+  // {
+  //   name: 'awards',
+  //   path: '/awards',
+  //   icon: <FaAward />,
+  // },
   {
     name: 'contact',
     path: '/contact',

@@ -3,6 +3,8 @@ import React from "react";
 import { FaCloudDownloadAlt } from "react-icons/fa";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
+import Meteors from "@/components/ui/meteors.jsx";
+
 
 const fadeIn = (direction = "up", delay = 0.4) => ({
   hidden: { opacity: 0, y: direction === "up" ? 50 : -50 },
@@ -11,12 +13,14 @@ const fadeIn = (direction = "up", delay = 0.4) => ({
 
 const About = () => {
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-center">
+<div className="min-h-screen bg-primary/30 pt-20 pb-10 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20 xl:pt-40 xl:pb-24 text-center flex items-center justify-center">
+    <Meteors/>
+
       <motion.h1 
         variants={fadeIn()}
         initial="hidden"
         animate="show"
-        className="hidden md:block text-4xl font-extrabold text-center text-accent mb-8"
+  className="hidden md:block mx-auto text-5xl font-extrabold text-center text-accent mb-8"
       >
         Education
       </motion.h1>

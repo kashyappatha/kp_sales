@@ -8,15 +8,15 @@ const Socials = () => {
     <Link href={'https://www.linkedin.com/in/kashyap-pathak-498996203/'} className="hover:text-accent transition-all duration-300" target="_blank" rel="noopener noreferrer"><RiLinkedinLine/></Link>
     <Link href={'https://stackoverflow.com/users/22828138/kashyappathak'} className="hover:text-accent transition-all duration-300" target="_blank" rel="noopener noreferrer"><RiStackOverflowLine/></Link>
     <Link 
-      href="/kashyappathak.pdf"
+      href="./Kashyap_Resume.pdf"
       onClick={(e) => {
         e.preventDefault();
         // Open in new tab
-        window.open("/kashyappathak.pdf", "_blank");
+        window.open("/Kashyap_Resume.pdf", "_blank");
         // Download
         const link = document.createElement('a');
-        link.href = "/kashyappathak.pdf";
-        link.download = "kashyappathak.pdf";
+        link.href = "/Kashyap_Resume.pdf";
+        link.download = "Kashyap_Resume.pdf";
         link.click();
       }}
       className="bg-primary hover:bg-primary/90 text-white px-4 py-1 rounded-lg transition-all duration-300 text-sm flex items-center gap-0 border border-white whitespace-nowrap"

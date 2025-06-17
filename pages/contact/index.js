@@ -76,9 +76,9 @@ export default function Contact() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl z-20">
         <form
           onSubmit={handleSubmit}
-          className="bg-primary bg-opacity-20 backdrop-blur-lg p-4 rounded-lg shadow-lg border border-gray-300 max-h-[400px] md:max-h-[600px] overflow-y-auto"
+          className="bg-primary bg-opacity-20 backdrop-blur-lg p-2 rounded-lg shadow-lg border border-gray-300 max-h-[470px] md:max-h-[800px] overflow-y-auto"
         > 
-          <h2 className="text-2xl font-bold text-center text-white mb-6">
+          <h2 className="hidden md:block text-2xl font-bold text-center text-white mb-6">
             Contact Us
           </h2>
           <div className="mb-4">
@@ -134,7 +134,7 @@ export default function Contact() {
               value={formData.message}
               onChange={handleChange}
               className={`w-full px-4 py-2 border ${errors.message ? 'border-red-500' : 'border-gray-400'} rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-transparent text-white`}
-              rows="2"
+              rows="1"
               disabled={loading}
             />
             {errors.message && (
